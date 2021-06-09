@@ -4,23 +4,48 @@
   
     
     <entry>
-      <title>安卓代码拉取</title>
-      <link href="/2021/06/09/5w2h-godweiyang/"/>
-      <url>/2021/06/09/5w2h-godweiyang/</url>
+      <title>Pixel-安卓系统刷机指南</title>
+      <link href="/2021/06/09/pixel-flash/"/>
+      <url>/2021/06/09/pixel-flash/</url>
       
-        <content type="html"><![CDATA[<h1 id="拉取aosp代码"><a href="#拉取aosp代码" class="headerlink" title="拉取aosp代码"></a>拉取aosp代码</h1><pre class="line-numbers language-cpp"><code class="language-cpp">repo init <span class="token operator">-</span>u https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>android<span class="token punctuation">.</span>googlesource<span class="token punctuation">.</span>com<span class="token operator">/</span>platform<span class="token operator">/</span>manifest <span class="token operator">-</span>b android<span class="token number">-10.0</span><span class="token punctuation">.</span>0_r33<span class="token operator">-</span>b 后面的参数可见 tag <span class="token operator">and</span> buildrepo sync <span class="token operator">-</span>j8repo start master <span class="token operator">--</span>all<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h1 id="下载厂商私有驱动，芯片相关bin"><a href="#下载厂商私有驱动，芯片相关bin" class="headerlink" title="下载厂商私有驱动，芯片相关bin"></a>下载厂商私有驱动，芯片相关bin</h1><p><a href="https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds" title="查找tag对应的build" target="_blank" rel="noopener">查找tag对应的build</a>如下</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="拉取aosp代码"><a href="#拉取aosp代码" class="headerlink" title="拉取aosp代码"></a>拉取aosp代码</h1><pre><code>repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r33-b 后面的参数可见 tag and buildrepo sync -j8repo start master --all</code></pre><h1 id="下载厂商私有驱动，芯片相关bin"><a href="#下载厂商私有驱动，芯片相关bin" class="headerlink" title="下载厂商私有驱动，芯片相关bin"></a>下载厂商私有驱动，芯片相关bin</h1><ul><li><p><a href="https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds" target="_blank" rel="noopener">查找tag对应的build</a>如下</p><p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=NmM0NjU1ZjMyMzJmNzIwY2NmZjgyNTM0NGZkZDdkZjdfaVoxYjhmMzE0S2JBQW04ekRQNndWNnRJWjZreVpRM3dfVG9rZW46Ym94Y25XUXpacENEc0xCZ0xLQm1tZXpURjFiXzE2MjMyMjc1MTM6MTYyMzIzMTExM19WNA" alt="tag-build对应图"></p></li><li><p><a href="https://developers.google.com/android/images" target="_blank" rel="noopener">根据build找到hardware compoent</a></p><p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=MzNjODQyNGEzODA2ZmU2NmQyN2NhNGZiZTRmOTJjMWVfUmlkTFQ3UEVtT05UT2YwcXp5blFZaGdUN2d5ZTkwNUpfVG9rZW46Ym94Y25CSW9QNFB6QXhzOUtQR1NSWHVDQ09lXzE2MjMyMjc2MTg6MTYyMzIzMTIxOF9WNA" alt="hardware-compoent对应图"></p></li><li><p>下载hardware compoent的两个link，解压后为两个脚本</p></li><li><p>进入aosp根目录，执行解压的两个脚本</p></li><li><p>检查是否生成vendor目录，最终会变成vendor.img</p></li></ul><h1 id="给手机解锁"><a href="#给手机解锁" class="headerlink" title="给手机解锁"></a>给手机解锁</h1><ul><li><p>手机连接上google的网络</p></li><li><p>开发者选项打开oem解锁</p></li><li><p>adb reboot fastboot</p></li><li><p>fastboot flashing unlock</p></li><li><p>手机确认解锁即可</p></li></ul><h1 id="服务器编译成dist包的方式"><a href="#服务器编译成dist包的方式" class="headerlink" title="服务器编译成dist包的方式"></a>服务器编译成dist包的方式</h1><h2 id="编译代码"><a href="#编译代码" class="headerlink" title="编译代码"></a>编译代码</h2><p>make dist -j8<br>编译产物为aosp_walleye-img-eng.wenda.zip</p><h1 id="下载factory软件"><a href="#下载factory软件" class="headerlink" title="下载factory软件"></a><a href="https://developers.google.com/android/images#walleye" target="_blank" rel="noopener">下载factory软件</a></h1><p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=ZGY4NDk1YjVkYjAxOWNmOTVjY2ZkZmZmOGFkYWIzMGJfamVrNEloNWxZcGQ0UmhKdWRPbXNjTXdjUlkxMm5nRmxfVG9rZW46Ym94Y25hSFV5N1dybEpkYmtZTkpOQlM0SzJjXzE2MjMyMjc4MTY6MTYyMzIzMTQxNl9WNA" alt="img"></p><p>替换aosp_walleye-img-eng.wenda.zip<br>修改脚本flash-all.sh 为fastboot -w update aosp_walleye-img-eng.wenda.zip</p><h1 id="刷写手机"><a href="#刷写手机" class="headerlink" title="刷写手机"></a>刷写手机</h1><p>adb reboot fastboot<br>执行flash-all.sh</p><h1 id="mac上直接编译的方式"><a href="#mac上直接编译的方式" class="headerlink" title="mac上直接编译的方式"></a>mac上直接编译的方式</h1><h2 id="编译代码-1"><a href="#编译代码-1" class="headerlink" title="编译代码"></a>编译代码</h2><p>Lunch xxx<br>Make -j8</p><h2 id="刷写手机-1"><a href="#刷写手机-1" class="headerlink" title="刷写手机"></a>刷写手机</h2><p>Cd aosp根目录<br>fastboot flashall -w</p>]]></content>
       
       
       <categories>
           
-          <category> 随笔 </category>
+          <category> 安卓 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 博客 </tag>
+            <tag> 系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Atrace技术分析</title>
+      <link href="/2021/06/09/atrace/"/>
+      <url>/2021/06/09/atrace/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Atrace-options"><a href="#Atrace-options" class="headerlink" title="Atrace options"></a>Atrace options</h1><pre><code>usage: atrace [options] [categories...]options include:  -a appname      enable app-level tracing for a comma separated list of cmdlines; * is a wildcard matching any process  -b N            use a trace buffer size of N KB  -c              trace into a circular buffer  -f filename     use the categories written in a file as space-separated                    values in a line  -k fname,...    trace the listed kernel functions  -n              ignore signals  -s N            sleep for N seconds before tracing [default 0]  -t N            trace for N seconds [default 5]  -z              compress the trace dump  --async_start   start circular trace and return immediately  --async_dump    dump the current contents of circular trace buffer  --async_stop    stop tracing and dump the current contents of circular                    trace buffer  --stream        stream trace to stdout as it enters the trace buffer                    Note: this can take significant CPU time, and is best                    used for measuring things that are not affected by                    CPU performance, like pagecache usage.  --list_categories                  list the available tracing categories -o filename      write the trace to the specified file instead                    of stdout.</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 性能优化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
             
         </tags>
       

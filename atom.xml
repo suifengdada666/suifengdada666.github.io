@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://suifengdada.com/"/>
-  <updated>2021-06-09T05:36:40.053Z</updated>
+  <updated>2021-06-09T12:53:14.836Z</updated>
   <id>https://suifengdada.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>安卓代码拉取</title>
-    <link href="https://suifengdada.com/2021/06/09/5w2h-godweiyang/"/>
-    <id>https://suifengdada.com/2021/06/09/5w2h-godweiyang/</id>
-    <published>2021-06-09T05:27:31.000Z</published>
-    <updated>2021-06-09T05:36:40.053Z</updated>
+    <title>Pixel-安卓系统刷机指南</title>
+    <link href="https://suifengdada.com/2021/06/09/pixel-flash/"/>
+    <id>https://suifengdada.com/2021/06/09/pixel-flash/</id>
+    <published>2021-06-09T08:42:52.000Z</published>
+    <updated>2021-06-09T12:53:14.836Z</updated>
     
     <summary type="html">
     
@@ -29,16 +29,42 @@
       
         
         
-          &lt;h1 id=&quot;拉取aosp代码&quot;&gt;&lt;a href=&quot;#拉取aosp代码&quot; class=&quot;headerlink&quot; title=&quot;拉取aosp代码&quot;&gt;&lt;/a&gt;拉取aosp代码&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-cpp&quot;&gt;&lt;code
+          &lt;h1 id=&quot;拉取aosp代码&quot;&gt;&lt;a href=&quot;#拉取aosp代码&quot; class=&quot;headerlink&quot; title=&quot;拉取aosp代码&quot;&gt;&lt;/a&gt;拉取aosp代码&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;repo init -u
         
       
     
     </summary>
     
-      <category term="随笔" scheme="https://suifengdada.com/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="安卓" scheme="https://suifengdada.com/categories/%E5%AE%89%E5%8D%93/"/>
     
     
-      <category term="博客" scheme="https://suifengdada.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="系统" scheme="https://suifengdada.com/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Atrace技术分析</title>
+    <link href="https://suifengdada.com/2021/06/09/atrace/"/>
+    <id>https://suifengdada.com/2021/06/09/atrace/</id>
+    <published>2021-06-09T06:26:17.000Z</published>
+    <updated>2021-06-09T09:09:33.997Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Atrace-options&quot;&gt;&lt;a href=&quot;#Atrace-options&quot; class=&quot;headerlink&quot; title=&quot;Atrace options&quot;&gt;&lt;/a&gt;Atrace options&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;usage: atrace
+        
+      
+    
+    </summary>
+    
+      <category term="性能优化" scheme="https://suifengdada.com/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="技术" scheme="https://suifengdada.com/tags/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
