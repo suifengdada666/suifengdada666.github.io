@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>随风达达的博客</title>
   
-  <subtitle>技术以最自然的方式跟世界交互</subtitle>
+  <subtitle>技术将以最自然的方式跟世界交互</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://suifengdada.com/"/>
-  <updated>2021-06-08T16:47:59.514Z</updated>
+  <updated>2021-06-09T05:36:40.053Z</updated>
   <id>https://suifengdada.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>5W2H | 关于写博客的七点反思</title>
-    <link href="https://suifengdada.com/2020/01/14/5w2h-godweiyang/"/>
-    <id>https://suifengdada.com/2020/01/14/5w2h-godweiyang/</id>
-    <published>2020-01-14T07:27:31.000Z</published>
-    <updated>2021-06-08T16:47:59.514Z</updated>
+    <title>安卓代码拉取</title>
+    <link href="https://suifengdada.com/2021/06/09/5w2h-godweiyang/"/>
+    <id>https://suifengdada.com/2021/06/09/5w2h-godweiyang/</id>
+    <published>2021-06-09T05:27:31.000Z</published>
+    <updated>2021-06-09T05:36:40.053Z</updated>
     
     <summary type="html">
     
