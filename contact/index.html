@@ -359,9 +359,9 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '1' + '.jpg)');
 <p>例如我的博客友链，大家可以加到自己博客里哦：</p>
 <ul>
 <li><strong>名称：</strong>suifengdada</li>
-<li><strong>地址：</strong><a href="https://suifengdada.com">https://suifengdada.com</a></li>
+<li><strong>地址：</strong><a href="https://suifengdada.com" target="_blank" rel="noopener">https://suifengdada.com</a></li>
 <li><strong>简介：</strong>基础技术 系统分析 内核芯片</li>
-<li><strong>头像：</strong><a href="https://suifengdada.com/medias/avatars/avatar.jpg">https://suifengdada.com/medias/avatars/avatar.jpg</a></li>
+<li><strong>头像：</strong><a href="https://suifengdada.com/medias/avatars/avatar.jpg" target="_blank" rel="noopener">https://suifengdada.com/medias/avatars/avatar.jpg</a></li>
 </ul>
 
                     </div>
@@ -371,29 +371,29 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + '1' + '.jpg)');
         <div class="card">
 
             
+            <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
 
-            
-            <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
-<link rel="stylesheet" href="/css/gitment.css">
-
-<div class="gitment-card card" data-aos="fade-up">
-    <div id="gitment-content" class="card-content"></div>
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
 </div>
 
-<script src="/libs/gitment/gitment.js"></script>
+<script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
-var gitment = new Gitment({
-    id: 'Fri Jul 26 2019 17:17:02 GMT+0800',
-    owner: 'suifengdada666',
-    repo: 'suifengdada666.github.io',
-    oauth: {
-        client_id: 'acd1db5489a7676fb85e',
-        client_secret: '0dca1fcac87181278278bc7e25258898379a07a0'
-    }
-});
+    let gitalk = new Gitalk({
+        clientID: 'acd1db5489a7676fb85e',
+        clientSecret: '0dca1fcac87181278278bc7e25258898379a07a0',
+        repo: 'gitment-comments',
+        owner: 'suifengdada666',
+        admin: "suifengdada666",
+        id: 'contact/index.html',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
 
-gitment.render('gitment-content');
+    gitalk.render('gitalk-container');
 </script>
+            
+
             
 
             

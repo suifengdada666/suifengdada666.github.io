@@ -331,7 +331,7 @@ options include:
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -718,29 +718,29 @@ options include:
     </div>
 
     
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
 
-    
-    <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
-<link rel="stylesheet" href="/css/gitment.css">
-
-<div class="gitment-card card" data-aos="fade-up">
-    <div id="gitment-content" class="card-content"></div>
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
 </div>
 
-<script src="/libs/gitment/gitment.js"></script>
+<script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
-var gitment = new Gitment({
-    id: 'Wed Jun 09 2021 14:26:17 GMT+0800',
-    owner: 'suifengdada666',
-    repo: 'suifengdada666.github.io',
-    oauth: {
-        client_id: 'acd1db5489a7676fb85e',
-        client_secret: '0dca1fcac87181278278bc7e25258898379a07a0'
-    }
-});
+    let gitalk = new Gitalk({
+        clientID: 'acd1db5489a7676fb85e',
+        clientSecret: '0dca1fcac87181278278bc7e25258898379a07a0',
+        repo: 'gitment-comments',
+        owner: 'suifengdada666',
+        admin: "suifengdada666",
+        id: '2021/06/09/atrace/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
 
-gitment.render('gitment-content');
+    gitalk.render('gitalk-container');
 </script>
+    
+
     
 
     
@@ -762,7 +762,7 @@ gitment.render('gitment-content');
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Pixel-安卓系统刷机指南">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Pixel-安卓系统刷机指南">
                         
                         <span class="card-title">Pixel-安卓系统刷机指南</span>
                     </div>
@@ -813,7 +813,7 @@ r
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Atrace技术分析">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Atrace技术分析">
                         
                         <span class="card-title">Atrace技术分析</span>
                     </div>
