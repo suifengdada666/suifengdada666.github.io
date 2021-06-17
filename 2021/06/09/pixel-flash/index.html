@@ -9,8 +9,9 @@
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="拉取aosp代码repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r33
+
 -b 后面的参数可见 tag and build
-r">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -331,7 +332,7 @@ r">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -486,7 +487,7 @@ r">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    237
+                    241
                 </div>
                 
 
@@ -510,40 +511,47 @@ r">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="拉取aosp代码"><a href="#拉取aosp代码" class="headerlink" title="拉取aosp代码"></a>拉取aosp代码</h1><pre><code>repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r33
+
 -b 后面的参数可见 tag and build
+
 repo sync -j8
+
 repo start master --all</code></pre><h1 id="下载厂商私有驱动，芯片相关bin"><a href="#下载厂商私有驱动，芯片相关bin" class="headerlink" title="下载厂商私有驱动，芯片相关bin"></a>下载厂商私有驱动，芯片相关bin</h1><ul>
-<li><p><a href="https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds" target="_blank" rel="noopener">查找tag对应的build</a>如下</p>
-<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=NmM0NjU1ZjMyMzJmNzIwY2NmZjgyNTM0NGZkZDdkZjdfaVoxYjhmMzE0S2JBQW04ekRQNndWNnRJWjZreVpRM3dfVG9rZW46Ym94Y25XUXpacENEc0xCZ0xLQm1tZXpURjFiXzE2MjMyMjc1MTM6MTYyMzIzMTExM19WNA" alt="tag-build对应图"></p>
-</li>
-<li><p><a href="https://developers.google.com/android/images" target="_blank" rel="noopener">根据build找到hardware compoent</a></p>
-<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=MzNjODQyNGEzODA2ZmU2NmQyN2NhNGZiZTRmOTJjMWVfUmlkTFQ3UEVtT05UT2YwcXp5blFZaGdUN2d5ZTkwNUpfVG9rZW46Ym94Y25CSW9QNFB6QXhzOUtQR1NSWHVDQ09lXzE2MjMyMjc2MTg6MTYyMzIzMTIxOF9WNA" alt="hardware-compoent对应图"></p>
-</li>
-<li><p>下载hardware compoent的两个link，解压后为两个脚本</p>
-</li>
-<li><p>进入aosp根目录，执行解压的两个脚本</p>
-</li>
-<li><p>检查是否生成vendor目录，最终会变成vendor.img</p>
-</li>
+<li><a href="https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds" target="_blank" rel="noopener">查找tag对应的build</a>如下</li>
 </ul>
-<h1 id="给手机解锁"><a href="#给手机解锁" class="headerlink" title="给手机解锁"></a>给手机解锁</h1><ul>
-<li><p>手机连接上google的网络</p>
-</li>
-<li><p>开发者选项打开oem解锁</p>
-</li>
-<li><p>adb reboot fastboot</p>
-</li>
-<li><p>fastboot flashing unlock</p>
-</li>
-<li><p>手机确认解锁即可</p>
-</li>
+<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=ODZmMjEyMzc1MzZjNGJiYjcxNGU5NDgzNjQ4YTgwMDNfOHBOS002Qmc3dXdSNDFnWXo2eTVQTHoybmFrSktBYVBfVG9rZW46Ym94Y25XUXpacENEc0xCZ0xLQm1tZXpURjFiXzE2MjM5NDkxNDA6MTYyMzk1Mjc0MF9WNA" alt></p>
+<ul>
+<li><a href="https://developers.google.com/android/drivers#walleyeqq2a.200405.005" target="_blank" rel="noopener">根据build找到hardware compoent</a></li>
 </ul>
-<h1 id="服务器编译成dist包的方式"><a href="#服务器编译成dist包的方式" class="headerlink" title="服务器编译成dist包的方式"></a>服务器编译成dist包的方式</h1><h2 id="编译代码"><a href="#编译代码" class="headerlink" title="编译代码"></a>编译代码</h2><p>make dist -j8<br>编译产物为aosp_walleye-img-eng.wenda.zip</p>
-<h1 id="下载factory软件"><a href="#下载factory软件" class="headerlink" title="下载factory软件"></a><a href="https://developers.google.com/android/images#walleye" target="_blank" rel="noopener">下载factory软件</a></h1><p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=ZGY4NDk1YjVkYjAxOWNmOTVjY2ZkZmZmOGFkYWIzMGJfamVrNEloNWxZcGQ0UmhKdWRPbXNjTXdjUlkxMm5nRmxfVG9rZW46Ym94Y25hSFV5N1dybEpkYmtZTkpOQlM0SzJjXzE2MjMyMjc4MTY6MTYyMzIzMTQxNl9WNA" alt="img"></p>
-<p>替换aosp_walleye-img-eng.wenda.zip<br>修改脚本flash-all.sh 为fastboot -w update aosp_walleye-img-eng.wenda.zip</p>
-<h1 id="刷写手机"><a href="#刷写手机" class="headerlink" title="刷写手机"></a>刷写手机</h1><p>adb reboot fastboot<br>执行flash-all.sh</p>
-<h1 id="mac上直接编译的方式"><a href="#mac上直接编译的方式" class="headerlink" title="mac上直接编译的方式"></a>mac上直接编译的方式</h1><h2 id="编译代码-1"><a href="#编译代码-1" class="headerlink" title="编译代码"></a>编译代码</h2><p>Lunch xxx<br>Make -j8</p>
-<h2 id="刷写手机-1"><a href="#刷写手机-1" class="headerlink" title="刷写手机"></a>刷写手机</h2><p>Cd aosp根目录<br>fastboot flashall -w</p>
+<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmI5NWE4ZGVhMzlmY2Q0YjE4NjU2OTM2MjAwOTRlYTZfaE9USFI2Qm84cTBuQ1F0ZjdNOXM4QjJtTno4RGpEanpfVG9rZW46Ym94Y25CSW9QNFB6QXhzOUtQR1NSWHVDQ09lXzE2MjM5NDkxNDA6MTYyMzk1Mjc0MF9WNA" alt></p>
+<ul>
+<li>下载hardware compoent的两个link，解压生成两个脚本</li>
+<li>进入aosp根目录，执行解压的两个脚本，并检查是否生成vendor目录，最终会生成vendor.img</li>
+</ul>
+<h1 id="解锁手机"><a href="#解锁手机" class="headerlink" title="解锁手机"></a>解锁手机</h1><ul>
+<li>手机连接上google的网络</li>
+<li>开发者选项打开oem解锁</li>
+</ul>
+<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=Y2FkOTQ1MGNmYzI4NjhiZWJlMTc4M2MyYTFkOTVlZmVfQkJtV3BDdnBCaWVINFVBbXpPN1RtR0tRQ01TamtkV09fVG9rZW46Ym94Y25yOXJMSTdJTnZnRGFnbHh6R2VtbkRjXzE2MjM5NDkxNDA6MTYyMzk1Mjc0MF9WNA" alt></p>
+<pre><code>adb reboot fastboot 让手机进入bootloader
+
+fastboot flashing unlock</code></pre><h1 id="编译刷写"><a href="#编译刷写" class="headerlink" title="编译刷写"></a>编译刷写</h1><h2 id="mac本地编译刷写"><a href="#mac本地编译刷写" class="headerlink" title="mac本地编译刷写"></a>mac本地编译刷写</h2><pre><code>Lunch xxx
+
+Make -j8
+
+adb reboot fastboot 让手机进入bootloader
+
+Cd aosp根目录
+
+fastboot flashall -w</code></pre><h2 id="服务器编译成dist包进行刷写"><a href="#服务器编译成dist包进行刷写" class="headerlink" title="服务器编译成dist包进行刷写"></a>服务器编译成dist包进行刷写</h2><ul>
+<li><code>make dist -j8</code>，得到编译产物为aosp_walleye-img-eng.wenda.zip</li>
+<li><a href="https://developers.google.com/android/images#walleye" target="_blank" rel="noopener">下载factory软件</a>得到flash-all.sh，并修改脚本为fastboot -w update aosp_walleye-img-eng.wenda.zip</li>
+</ul>
+<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=MDdiMzY3N2Y1YmQ4M2VkOWNiMTUwYjU1ZTE4Y2FkYmVfVFBlNmFUcWJHVXd5REFQN3RwTHJXcW1uMVFyZm91c2dfVG9rZW46Ym94Y25hSFV5N1dybEpkYmtZTkpOQlM0SzJjXzE2MjM5NDkxNDA6MTYyMzk1Mjc0MF9WNA" alt></p>
+<ul>
+<li>adb reboot fastboot让手机进入bootloader</li>
+<li>执行flash-all.sh刷写手机</li>
+</ul>
 
             </div>
             <hr />
@@ -1006,16 +1014,64 @@ repo start master --all</code></pre><h1 id="下载厂商私有驱动，芯片相
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/06/09/atrace/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="Atrace视角剖析安卓系统跟踪">
+                        
+                        <span class="card-title">Atrace视角剖析安卓系统跟踪</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            概述一个跟踪范围涵盖了用户空间（App/Framewrok/native），内核空间（Kernel），设备厂商私有服务（Vendor）的系统级别跟踪工具。它不仅集成了内核ftrace的event-tracepoint静态跟踪能力，还集成了f
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/安卓/" class="post-category" target="_blank">
+                                    安卓
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/系统分析/" target="_blank">
+                        <span class="chip bg-color">系统分析</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
             </div>
             <div class="card">
                 <a href="/2021/06/09/pixel-flash/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Pixel-安卓系统刷机指南">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Pixel-安卓系统刷机指南">
                         
                         <span class="card-title">Pixel-安卓系统刷机指南</span>
                     </div>
@@ -1024,8 +1080,9 @@ repo start master --all</code></pre><h1 id="下载厂商私有驱动，芯片相
                     <div class="summary block-with-text">
                         
                             拉取aosp代码repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r33
+
 -b 后面的参数可见 tag and build
-r
+
                         
                     </div>
                     <div class="publish-info">
@@ -1050,57 +1107,6 @@ r
                     
                     <a href="/tags/系统/" target="_blank">
                         <span class="chip bg-color">系统</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/06/09/atrace/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Atrace技术分析">
-                        
-                        <span class="card-title">Atrace技术分析</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Atrace optionsusage: atrace [options] [categories...]
-options include:
-  -a appname      enable app-level tracing for a 
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-09
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/性能优化/" class="post-category" target="_blank">
-                                    性能优化
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/技术/" target="_blank">
-                        <span class="chip bg-color">技术</span>
                     </a>
                     
                 </div>
@@ -1299,7 +1305,7 @@ conf: 'prod_152b51d9b76214d16b689ada9fc20144'
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">409</span>
+            <span class="white-color">2.3k</span>
             
 
             <br>
