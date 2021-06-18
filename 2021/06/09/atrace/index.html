@@ -585,10 +585,13 @@ options include:
 <p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=NDZlYjQ2ZWFhODBkM2JhM2E5NWJlMGY1NTgwMDFmMzFfRzlzQ0xQczRMRDZRQWNFU3hWbGY4QUxWeUV6T1R6dGdfVG9rZW46Ym94Y25SeWM2bG0xSE9nTXNBN3JiMFlsREFnXzE2MjM5NDc2MjU6MTYyMzk1MTIyNV9WNA" alt></p>
 <h2 id="–list-categories"><a href="#–list-categories" class="headerlink" title="–list_categories"></a>–list_categories</h2><p>它能够列举出用户空间，内核空间，vendor服务支持的所有种类，将各种各样的跟踪能力抽象为种类的概念</p>
 <p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=NjM0OTM0MTZhYTk2NGU2OWM1YjdlZWQzMDVlZWEyYTJfUzlRMENwRWFIQmtuaGNCU0hBZjRhbzJnM3BiOUpPRGhfVG9rZW46Ym94Y250QzluRkgyR1o3Z2pkVnVla09TV3RkXzE2MjM5NDc2MjU6MTYyMzk1MTIyNV9WNA" alt></p>
-<h1 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h1><p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=ODZmODI5ZmVjNTBkZTkxMjFiMzU3YzBkMmQ1YjA1Zjlfd0dYdTBSSGVZeDhBZTMzRDIxRU9tSnN2VDBTN3I2cjZfVG9rZW46Ym94Y252YTBFVmpheWt5SFNLbFNVd3luQ3ZnXzE2MjM5NDc2MjU6MTYyMzk1MTIyNV9WNA" alt="系统架构图"></p>
 <ul>
-<li>atrace通过控制安卓属性，以及sysfile文件节点，将静态打点以及动态跟踪的能力抽象成‘种类’的概念来统一管理，从层级上来看，则抽象出了UserspaceTracing，KernelTracing, VendorTracing三种层级。</li>
-<li>UserspaceTracing，采集数据中带B,E,S,F代表的就是应用空间同步/异步api的打点，在systrace/perfetto中表现为slice，而带C的则表示为counter，具体的格式除了开头的由内核写入的pid，tgid, 进程名字等信息外，均由每个线程每个函数自己定义，并在ftrace的function中统一表现为trace_marker，具体的应用层打点api如下</li>
+<li><h1 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h1><p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=MjBjODlmNmZkZTc0YWNlMGY1ZGRjNzA2YTJiOThiYmZfQzNkeDF1MHMzSFNOYVNWNXJvMENodjVFUjY0aGhxRzhfVG9rZW46Ym94Y253bTV3UndrQlZ4NVZMWUlWc2trTEFjXzE2MjM5ODc5MTQ6MTYyMzk5MTUxNF9WNA" alt></p>
+</li>
+<li><p>atrace通过控制安卓属性，以及sysfile文件节点，将静态打点以及动态跟踪的能力抽象成‘种类’的概念来统一管理，从层级上来看，则抽象出了UserspaceTracing，KernelTracing, VendorTracing三种层级</p>
+</li>
+<li><p>UserspaceTracing，采集数据中带B,E,S,F代表的就是应用空间同步/异步api的打点，在systrace/perfetto中表现为slice，而带C的则表示为counter，具体的格式除了开头的由内核写入的pid，tgid, 进程名字等信息外，均由每个线程每个函数自己定义，并在ftrace的function中统一表现为trace_marker，具体的应用层打点api如下</p>
+</li>
 </ul>
 <pre><code>App-api:
 
