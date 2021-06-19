@@ -332,7 +332,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -519,11 +519,11 @@ repo sync -j8
 repo start master --all</code></pre><h1 id="下载厂商私有驱动，芯片相关bin"><a href="#下载厂商私有驱动，芯片相关bin" class="headerlink" title="下载厂商私有驱动，芯片相关bin"></a>下载厂商私有驱动，芯片相关bin</h1><ul>
 <li><a href="https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds" target="_blank" rel="noopener">查找tag对应的build</a>如下</li>
 </ul>
-<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=MTllYjY4Mjk5ZTYzMWEwMjMyMGU4OTllZjRjYmU0YWRfeFhWQ2lJbk9NNldreUVUZnhEOEpReThBM204ZUgwa2NfVG9rZW46Ym94Y25XUXpacENEc0xCZ0xLQm1tZXpURjFiXzE2MjQwMDYxNTg6MTYyNDAwOTc1OF9WNA" alt></p>
+<p><img src="/2021/06/09/pixel-flash/image.png" alt></p>
 <ul>
 <li><a href="https://developers.google.com/android/drivers#walleyeqq2a.200405.005" target="_blank" rel="noopener">根据build找到hardware compoent</a></li>
 </ul>
-<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=MmEzMTZkZTZhZWI2NDM1YzI1MDQ5ZjA2OTNhODcxMjNfSXBaOWdwUVZmU2lQcWk1U3VGa21hUDJ2Tlh1U05SOTRfVG9rZW46Ym94Y25CSW9QNFB6QXhzOUtQR1NSWHVDQ09lXzE2MjQwMDYxNTg6MTYyNDAwOTc1OF9WNA" alt></p>
+<p><img src="/2021/06/09/pixel-flash/image1.png" alt></p>
 <ul>
 <li>下载hardware compoent的两个link，解压生成两个脚本</li>
 <li>进入aosp根目录，执行解压的两个脚本，并检查是否生成vendor目录，最终会生成vendor.img</li>
@@ -532,7 +532,7 @@ repo start master --all</code></pre><h1 id="下载厂商私有驱动，芯片相
 <li>手机连接上google的网络</li>
 <li>开发者选项打开oem解锁</li>
 </ul>
-<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=MDFiNDQ4OTA5ZWMwMjBlNmQzMWExYjdmYWQ0ZWNlNjhfSXQxV0xUd3NwM3M3aXk1djdYSDEyeDdpb3V0N0l1bFdfVG9rZW46Ym94Y25yOXJMSTdJTnZnRGFnbHh6R2VtbkRjXzE2MjQwMDYxNTg6MTYyNDAwOTc1OF9WNA" alt></p>
+<p><img src="/2021/06/09/pixel-flash/image2.png" alt></p>
 <pre><code>adb reboot fastboot 让手机进入bootloader
 
 fastboot flashing unlock</code></pre><h1 id="编译刷写"><a href="#编译刷写" class="headerlink" title="编译刷写"></a>编译刷写</h1><h2 id="mac本地编译刷写"><a href="#mac本地编译刷写" class="headerlink" title="mac本地编译刷写"></a>mac本地编译刷写</h2><pre><code>Lunch xxx
@@ -547,7 +547,7 @@ fastboot flashall -w</code></pre><h2 id="服务器编译成dist包进行刷写">
 <li><code>make dist -j8</code>，得到编译产物为aosp_walleye-img-eng.wenda.zip</li>
 <li><a href="https://developers.google.com/android/images#walleye" target="_blank" rel="noopener">下载factory软件</a>得到flash-all.sh，并修改脚本为fastboot -w update aosp_walleye-img-eng.wenda.zip</li>
 </ul>
-<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=ZDg3MmMyMTU5OGI3MDk2ZDAzMWEyM2FiMjU3YzgwODdfY1pxMjA1Z1pXT2F2enM0T1RXSFJCbGIzdUNNV3ZEdmNfVG9rZW46Ym94Y25hSFV5N1dybEpkYmtZTkpOQlM0SzJjXzE2MjQwMDYxNTg6MTYyNDAwOTc1OF9WNA" alt></p>
+<p><img src="/2021/06/09/pixel-flash/2afe7fd5-1d92-403d-a7e9-0a2771b62456.png" alt></p>
 <ul>
 <li>adb reboot fastboot让手机进入bootloader</li>
 <li>执行flash-all.sh刷写手机</li>
@@ -1023,7 +1023,7 @@ fastboot flashall -w</code></pre><h2 id="服务器编译成dist包进行刷写">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Pixel-安卓系统刷机指南">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Pixel-安卓系统刷机指南">
                         
                         <span class="card-title">Pixel-安卓系统刷机指南</span>
                     </div>
@@ -1076,7 +1076,7 @@ fastboot flashall -w</code></pre><h2 id="服务器编译成dist包进行刷写">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="Atrace视角剖析安卓系统跟踪">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="Atrace视角剖析安卓系统跟踪">
                         
                         <span class="card-title">Atrace视角剖析安卓系统跟踪</span>
                     </div>

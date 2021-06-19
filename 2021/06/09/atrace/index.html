@@ -329,7 +329,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -562,9 +562,9 @@ options include:
 <li>如果需要设置跟踪多个app，可以用逗号进行间隔。如果需要设置跟踪所有app则设置为*</li>
 <li>另外一种跟踪app等价的方式是，首先设置ro.atrace.core.services属性为app的名称，然后atrace启动的时候，添加core_services的命令行参数</li>
 </ul>
-<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=ZDFmMzFiZTFlZjcxZDkxNjVkOTgzNTQ0NDM4NWNiOWFfUjcxQWxWVEFFaENORnRNbXJNc2FudEpKeWhWT3FwcjZfVG9rZW46Ym94Y25lMVNBbjhyU3JHeEpGRTYzNjZSVllPXzE2MjQwMDU4NjM6MTYyNDAwOTQ2M19WNA" alt></p>
-<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=MzM3ZDExYWQwMmVkOTQzMjc2YTkxMjA4YjJjMGY3YWNfN0JSUEZyWTUzR0pZMkd6aTFXSzJXUEc5QkpKRU1NVmZfVG9rZW46Ym94Y25Nd1pTNW1nak5LVVBvclNEYzloM0VjXzE2MjQwMDU4NjM6MTYyNDAwOTQ2M19WNA" alt></p>
-<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=OGFkMGRkZmVkMjY0ZTg5Nzc4MGJiNDdkODVkNGMyYTFfTXZvcGxFNUxNdUFsTzdBNWlUT2lvZHRDNmZsRnBxMGxfVG9rZW46Ym94Y25FazFXTjRhd0JGOUJCd1UyWGhTNmFkXzE2MjQwMDU4NjM6MTYyNDAwOTQ2M19WNA" alt></p>
+<p><img src="/2021/06/09/atrace/1.png" alt></p>
+<p><img src="/2021/06/09/atrace/bc255af0-7c8f-423e-949b-c490fe4717e8.png" alt></p>
+<p><img src="/2021/06/09/atrace/d3a94a0a-25c4-4266-b888-78db8a8828f4.png" alt></p>
 <h2 id="b-buffer-size"><a href="#b-buffer-size" class="headerlink" title="-b buffer size"></a>-b buffer size</h2><ul>
 <li>它的单位是k，默认启动设置为2M。</li>
 <li>文件节点是跟踪目录下的buffer_size_kb，表示的是每一个cpu独立的内存大小，总的占用内存大小等于buffer size乘以cpu个数，可通过buffer_total_size_kb文件节点获取。</li>
@@ -582,10 +582,10 @@ options include:
 <li>trace文件节点是静态的，每次读取需要暂停生产者，并且读取完需要清空trace，可以支持多个进程读取完再统一清空。而trace_pipe文件节点是消费型的，进程读取之后就消费掉了，但是优势是不需要暂停生产者，且atrace默认将获得的数据打印到控制台更方便调试。</li>
 <li>一些基于atrace能力的采集工具例如perfetto就重点优化了这里，通过读取每个cpu的trace_pipe原始数据实现长时间采集的能力。</li>
 </ul>
-<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=YzFkZWNhZTdiMGZkNTZlMDg1OGNjZGNmYjRjYWQ5ZDhfNklBamtoMGF0bWxoUVNsbHlTNVM4S2FGdVVDUlNBNDZfVG9rZW46Ym94Y25SeWM2bG0xSE9nTXNBN3JiMFlsREFnXzE2MjQwMDU4NjM6MTYyNDAwOTQ2M19WNA" alt></p>
+<p><img src="/2021/06/09/atrace/61ea05f3-68ca-4ed4-b750-c675fc7dc801.png" alt></p>
 <h2 id="–list-categories"><a href="#–list-categories" class="headerlink" title="–list_categories"></a>–list_categories</h2><p>它能够列举出用户空间，内核空间，vendor服务支持的所有种类，将各种各样的跟踪能力抽象为种类的概念</p>
-<p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=NTI5OTgxZDMzNmIxMmU5YTBlZDQ2YjI3YTlhNWI0MzVfMm9adEhlV3pISmVEVlo0a0pjUVpRUXg1cVRuYTI5U3ZfVG9rZW46Ym94Y250QzluRkgyR1o3Z2pkVnVla09TV3RkXzE2MjQwMDU4NjM6MTYyNDAwOTQ2M19WNA" alt></p>
-<h1 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h1><p><img src="https://bytedance.feishu.cn/space/api/box/stream/download/asynccode/?code=MTg0YmRmZjI1YTBkYjI4NTRjOTlkZmQ3NDU2NjRlOTRfWlpZVFJFV3VPVW9BZHdaVlByc2h3blJGUU1UMnhMbnFfVG9rZW46Ym94Y253bTV3UndrQlZ4NVZMWUlWc2trTEFjXzE2MjQwMDU4NjM6MTYyNDAwOTQ2M19WNA" alt></p>
+<p><img src="/2021/06/09/atrace/00cf8457-5d28-4737-9814-467e520f8e8c.png" alt></p>
+<h1 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h1><p><img src="/2021/06/09/atrace/c6e583a3-f222-45fd-b2d7-0663a8b2c128.png" alt></p>
 <ul>
 <li>atrace通过控制安卓属性，以及sysfile文件节点，将静态打点以及动态跟踪的能力抽象成‘种类’的概念来统一管理，从层级上来看，则抽象出了UserspaceTracing，KernelTracing, VendorTracing三种层级。</li>
 <li>UserspaceTracing，采集数据中带B,E,S,F代表的就是应用空间同步/异步api的打点，在systrace/perfetto中表现为slice，而带C的则表示为counter，具体的格式除了开头的由内核写入的pid，tgid, 进程名字等信息外，均由每个线程每个函数自己定义，并在ftrace的function中统一表现为trace_marker，具体的应用层打点api如下</li>
@@ -1214,7 +1214,7 @@ README      buffer_total_size_kb instances saved_cmdlines set_event_pid trace_op
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Pixel-安卓系统刷机指南">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Pixel-安卓系统刷机指南">
                         
                         <span class="card-title">Pixel-安卓系统刷机指南</span>
                     </div>
@@ -1266,7 +1266,7 @@ README      buffer_total_size_kb instances saved_cmdlines set_event_pid trace_op
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="Atrace视角剖析安卓系统跟踪">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="Atrace视角剖析安卓系统跟踪">
                         
                         <span class="card-title">Atrace视角剖析安卓系统跟踪</span>
                     </div>
