@@ -4,23 +4,23 @@
   
     
     <entry>
-      <title>Pixel-安卓系统刷机指南</title>
-      <link href="/2021/06/09/pixel-flash/"/>
-      <url>/2021/06/09/pixel-flash/</url>
+      <title>Vimium——键盘党必备上网武器</title>
+      <link href="/2021/06/25/vimium/"/>
+      <url>/2021/06/25/vimium/</url>
       
-        <content type="html"><![CDATA[<h1 id="拉取aosp代码"><a href="#拉取aosp代码" class="headerlink" title="拉取aosp代码"></a>拉取aosp代码</h1><pre><code>repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r33-b 后面的参数可见 tag and buildrepo sync -j8repo start master --all</code></pre><h1 id="下载厂商私有驱动，芯片相关bin"><a href="#下载厂商私有驱动，芯片相关bin" class="headerlink" title="下载厂商私有驱动，芯片相关bin"></a>下载厂商私有驱动，芯片相关bin</h1><ul><li><a href="https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds" target="_blank" rel="noopener">查找tag对应的build</a>如下</li></ul><p><img src="/2021/06/09/pixel-flash/image.png" alt></p><ul><li><a href="https://developers.google.com/android/drivers#walleyeqq2a.200405.005" target="_blank" rel="noopener">根据build找到hardware compoent</a></li></ul><p><img src="/2021/06/09/pixel-flash/image1.png" alt></p><ul><li>下载hardware compoent的两个link，解压生成两个脚本</li><li>进入aosp根目录，执行解压的两个脚本，并检查是否生成vendor目录，最终会生成vendor.img</li></ul><h1 id="解锁手机"><a href="#解锁手机" class="headerlink" title="解锁手机"></a>解锁手机</h1><ul><li>手机连接上google的网络</li><li>开发者选项打开oem解锁</li></ul><p><img src="/2021/06/09/pixel-flash/image2.png" alt></p><pre><code>adb reboot fastboot 让手机进入bootloaderfastboot flashing unlock</code></pre><h1 id="编译刷写"><a href="#编译刷写" class="headerlink" title="编译刷写"></a>编译刷写</h1><h2 id="mac本地编译刷写"><a href="#mac本地编译刷写" class="headerlink" title="mac本地编译刷写"></a>mac本地编译刷写</h2><pre><code>Lunch xxxMake -j8adb reboot fastboot 让手机进入bootloaderCd aosp根目录fastboot flashall -w</code></pre><h2 id="服务器编译成dist包进行刷写"><a href="#服务器编译成dist包进行刷写" class="headerlink" title="服务器编译成dist包进行刷写"></a>服务器编译成dist包进行刷写</h2><ul><li><code>make dist -j8</code>，得到编译产物为aosp_walleye-img-eng.wenda.zip</li><li><a href="https://developers.google.com/android/images#walleye" target="_blank" rel="noopener">下载factory软件</a>得到flash-all.sh，并修改脚本为fastboot -w update aosp_walleye-img-eng.wenda.zip</li></ul><p><img src="/2021/06/09/pixel-flash/2afe7fd5-1d92-403d-a7e9-0a2771b62456.png" alt></p><ul><li>adb reboot fastboot让手机进入bootloader</li><li>执行flash-all.sh刷写手机</li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>vimium是一个chrome插件，继承了神的编辑器vim的灵魂，纯键盘实现浏览器导航，很多时候可以辅助提高工作效率</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a href="https://vimium.github.io/" target="_blank" rel="noopener">vimium官网</a></p><p><img src="/2021/06/25/vimium/1.png" alt></p><h1 id="浏览器导航效率"><a href="#浏览器导航效率" class="headerlink" title="浏览器导航效率"></a>浏览器导航效率</h1><p>从上往下观察一个网页可以分为：</p><ul><li>标签操作：标签的左右移动，复制，关闭/重新打开，在新的窗口打开</li><li>上一个网页，下一个网页，刷新网页</li><li>网页url：url的复制与搜索，包括全网google搜索，在自己收藏的网页搜索，在打开的标签页搜索</li><li>进入网页的输入框</li><li>上下左右滑动网页</li><li>跳转网页其他链接</li><li>网页内容的搜索/复制</li></ul><p><img src="/2021/06/25/vimium/2.png" alt></p><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>？可以打开手册随时查看</p><p><img src="/2021/06/25/vimium/3.png" alt></p><h1 id="实战场景"><a href="#实战场景" class="headerlink" title="实战场景"></a>实战场景</h1><h2 id="网页控制"><a href="#网页控制" class="headerlink" title="网页控制"></a>网页控制</h2><ul><li>j,k,u,d,gg,G,h,l 用于控制上下左右滑，慢速上下滑，快速上下滑，滑到头部或者滑到末尾</li><li>H/L 查看上一个网页和下一个网页</li><li>r 刷新页面</li><li>yy 复制网页url, yf复制网页任意链接</li><li>gi能够进入第一个输入框，取代了鼠标的点击输入框的操作</li></ul><p><strong>相比鼠标的优势</strong></p><ul><li>滑到头部或者末尾鼠标要滚比较久，需要左右滑的时候鼠标比较难控制</li><li>查看上一个网页，下一个网页，刷新网页不需要拖动鼠标或者点击</li><li>可以比较方便的复制url，或者网页里的飞书云文档链接，分享给同事或者添加到自己的文档</li></ul><h2 id="标签导航"><a href="#标签导航" class="headerlink" title="标签导航"></a>标签导航</h2><ul><li>J/K是tab的左右导航 </li><li>^ 导航到上一个tab</li><li>g0 g$ 是导航到最前面或者最后面的tab</li><li>yt是复制同一个tab页</li><li>x/X 关闭当前tab以及恢复误删除的tab</li></ul><p><strong>相比鼠标的优势</strong></p><p>标签导航速度比鼠标操作快很多</p><h2 id="链接跳转"><a href="#链接跳转" class="headerlink" title="链接跳转"></a>链接跳转</h2><ul><li>o/O 谷歌搜索，支持当前网页打开或者在新的一个标签打开</li><li>f/F 是最强大的功能，能够将打开网页上的链接，支持当前网页打开或者在新的一个标签打开</li></ul><p><strong>相比鼠标的优势</strong></p><p>手可以一直保持在键盘上，搜索内容，打开网页一气呵成</p><h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><ul><li>b/B用来搜索保存的网页</li><li>T 用来搜索当前显示的书签</li><li>/ n/N 查找网页内容/下一个/上一个,这 个的厉害之处在于搜索到之后可以进入类似的vi的visual模式，可以使用vi的快捷键进一步的操作文档，在我们看一些log需要复制出来的时候比较有用</li></ul><p><img src="/2021/06/25/vimium/4.png" alt></p><p><img src="/2021/06/25/vimium/5.png" alt></p><p><img src="/2021/06/25/vimium/6.png" alt></p><p><strong>相比鼠标的优势</strong></p><p>鼠标无法实现的丰富的搜索功能</p>]]></content>
       
       
       <categories>
           
-          <category> 安卓 </category>
+          <category> 工具 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 系统 </tag>
+            <tag> 浏览器 </tag>
             
         </tags>
       
@@ -46,6 +46,31 @@
         <tags>
             
             <tag> 系统分析 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Pixel-安卓系统刷机指南</title>
+      <link href="/2021/06/09/pixel-flash/"/>
+      <url>/2021/06/09/pixel-flash/</url>
+      
+        <content type="html"><![CDATA[<h1 id="拉取aosp代码"><a href="#拉取aosp代码" class="headerlink" title="拉取aosp代码"></a>拉取aosp代码</h1><pre><code>repo init -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r33-b 后面的参数可见 tag and buildrepo sync -j8repo start master --all</code></pre><h1 id="下载厂商私有驱动，芯片相关bin"><a href="#下载厂商私有驱动，芯片相关bin" class="headerlink" title="下载厂商私有驱动，芯片相关bin"></a>下载厂商私有驱动，芯片相关bin</h1><ul><li><a href="https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds" target="_blank" rel="noopener">查找tag对应的build</a>如下</li></ul><p><img src="/2021/06/09/pixel-flash/image.png" alt></p><ul><li><a href="https://developers.google.com/android/drivers#walleyeqq2a.200405.005" target="_blank" rel="noopener">根据build找到hardware compoent</a></li></ul><p><img src="/2021/06/09/pixel-flash/image1.png" alt></p><ul><li>下载hardware compoent的两个link，解压生成两个脚本</li><li>进入aosp根目录，执行解压的两个脚本，并检查是否生成vendor目录，最终会生成vendor.img</li></ul><h1 id="解锁手机"><a href="#解锁手机" class="headerlink" title="解锁手机"></a>解锁手机</h1><ul><li>手机连接上google的网络</li><li>开发者选项打开oem解锁</li></ul><p><img src="/2021/06/09/pixel-flash/image2.png" alt></p><pre><code>adb reboot fastboot 让手机进入bootloaderfastboot flashing unlock</code></pre><h1 id="编译刷写"><a href="#编译刷写" class="headerlink" title="编译刷写"></a>编译刷写</h1><h2 id="mac本地编译刷写"><a href="#mac本地编译刷写" class="headerlink" title="mac本地编译刷写"></a>mac本地编译刷写</h2><pre><code>Lunch xxxMake -j8adb reboot fastboot 让手机进入bootloaderCd aosp根目录fastboot flashall -w</code></pre><h2 id="服务器编译成dist包进行刷写"><a href="#服务器编译成dist包进行刷写" class="headerlink" title="服务器编译成dist包进行刷写"></a>服务器编译成dist包进行刷写</h2><ul><li><code>make dist -j8</code>，得到编译产物为aosp_walleye-img-eng.wenda.zip</li><li><a href="https://developers.google.com/android/images#walleye" target="_blank" rel="noopener">下载factory软件</a>得到flash-all.sh，并修改脚本为fastboot -w update aosp_walleye-img-eng.wenda.zip</li></ul><p><img src="/2021/06/09/pixel-flash/2afe7fd5-1d92-403d-a7e9-0a2771b62456.png" alt></p><ul><li>adb reboot fastboot让手机进入bootloader</li><li>执行flash-all.sh刷写手机</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安卓 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 系统 </tag>
             
         </tags>
       
